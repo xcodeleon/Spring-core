@@ -10,9 +10,11 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
         CurrentTime currentTime = context.getBean("currentTime", CurrentTime.class);
+        FibonacciNumber fibonacciNumber = context.getBean("fibonacchiNumber", FibonacciNumber.class);
 
         System.out.println(currentTime);
         System.out.println(helloWorld);
+        System.out.println(fibonacciNumber);
 
     }
 }
