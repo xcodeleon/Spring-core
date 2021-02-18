@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorld" class="ru.xcodeleon.spring.HelloWorld" />
+    <bean id="currentTime" class="ru.xcodeleon.spring.CurrentTime"/>
+    <bean id="fibonacchiNumber" class="ru.xcodeleon.spring.FibonacciNumber"/>
+    <bean name="factorySelfCreationBean" class="ru.xcodeleon.spring.FactorySelfCreationBean" factory-method="getInstance"/>
+    <bean name="factoryBean" class="ru.xcodeleon.spring.FactoryBean"/>
+    <bean name="createHelloFromFactory" factory-bean="factoryBean" factory-method="getHelloFromFactory"/>
+
+
+
+</beans>
