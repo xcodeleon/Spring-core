@@ -7,14 +7,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("xml/spring-config.xml");
         HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
         CurrentTime currentTime = context.getBean("currentTime", CurrentTime.class);
         FibonacciNumber fibonacciNumber = context.getBean("fibonacchiNumber", FibonacciNumber.class);
 
-        System.out.println(currentTime);
-        System.out.println(helloWorld);
-        System.out.println(fibonacciNumber);
+        FactorySelfCreationBean factorySelfCreationBean = (FactorySelfCreationBean )context.getBean("factorySelfCreationBean");
+        System.out.println(factorySelfCreationBean);
+
+        HelloWorld bean2 = context.getBean("createHelloFromFactory", HelloWorld.class);
+        System.out.println(bean2);
 
     }
 }
